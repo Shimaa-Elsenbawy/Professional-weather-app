@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bad+Script&family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dosis:wght@200..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&family=Lexend+Giga:wght@100..900&family=Libertinus+Math&family=Merienda:wght@300..900&family=Nata+Sans:wght@100..900&family=Oswald:wght@200..700&family=Pacifico&family=Playwrite+NO:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+   
+    <link rel="stylesheet" href="./assets/css/map.css">
+</head>
+<body>
+
+       <div id="weatherMap">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                    <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="search" placeholder="Search for a place..." class="search-input">
+
+                <button class="btn">Search</button>
+
+                <div class="suggestions"></div>
+            </div>
+
+                <!-- <iframe class="gmap_iframe" src="https://www.google.com/maps?q=Cairo&amp;z=15&amp;t=m&amp;hl=en&amp;output=embed" frameborder="0" scrolling="no"></iframe> -->
+                <!-- <a href="https://www.spaceref.com/">www.spaceref.com</a> -->
+<div class="map-card">
+
+    <div class="map-header">
+        <div>
+            <h3>Location Details</h3>
+            <p>Weather & location information</p>
+        </div>
+
+        <i class="fa-solid fa-location-dot"></i>
+    </div>
+
+    <div class="map-location">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+            <h4 class="map-city">Cairo</h4>
+            <span class="map-country">Egypt</span>
+        </div>
+    </div>
+
+    <div class="map-time">
+        <span>Local Time</span>
+        <strong class="map-local-time">08:30 PM</strong>
+    </div>
+
+    <div class="map-coordinates">
+        <div>
+            <span>Latitude</span>
+            <strong class="map-latitude">30.04°</strong>
+        </div>
+
+        <div>
+            <span>Longitude</span>
+            <strong class="map-longitude">31.24°</strong>
+        </div>
+    </div>
+
+    <div class="sun-info">
+
+        <div class="sun-item">
+            <i class="fa-solid fa-sun"></i>
+
+            <div>
+                <span>Sunrise</span>
+                <strong class="map-sunrise">05:30 AM</strong>
+            </div>
+        </div>
+
+        <div class="sun-item">
+            <i class="fa-solid fa-moon"></i>
+
+            <div>
+                <span>Sunset</span>
+                <strong class="map-sunset">06:15 PM</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="map-extra-details">
+
+        <div class="map-detail">
+            <i class="fa-solid fa-cloud"></i>
+
+            <div>
+                <span>Cloud Cover</span>
+                <strong class="map-cloud">20%</strong>
+            </div>
+        </div>
+
+        <div class="map-detail">
+            <i class="fa-solid fa-eye"></i>
+
+            <div>
+                <span>Visibility</span>
+                <strong class="map-visibility">10 km</strong>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+            </div>
+         </div>
+        </div>
+
+        
+
+      <script type="module" src="./assets/js/map.js"></script>
+</body>
+</html>

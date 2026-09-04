@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forecast</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./assets/css/forecast.css">
+</head>
+
+<body>
+
+    <main class="forecast-page">
+
+        <header class="forecast-header">
+
+            <div>
+                <p>Weather Forecast</p>
+                <h1>7-Day Outlook</h1>
+            </div>
+
+            <div class="forecast-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span class="forecast-city">Cairo, Egypt</span>
+            </div>
+
+        </header>
+
+
+        <section class="temperature-section">
+
+            <div class="section-title">
+                <div>
+                    <span>Temperature</span>
+                    <h2>Weekly Trend</h2>
+                </div>
+
+                <i class="fa-solid fa-temperature-half"></i>
+            </div>
+
+            <div class="temperature-chart">
+                <div class="chart-placeholder"></div>
+            </div>
+
+        </section>
+
+
+        <section class="forecast-grid">
+
+            <div class="forecast-card rain-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                </div>
+
+                <div>
+                    <span>Rain Probability</span>
+                    <h2 class="rain-value">--%</h2>
+                </div>
+
+                <p class="rain-day">Highest chance</p>
+
+            </div>
+
+
+            <div class="forecast-card sun-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+
+                <div>
+                    <span>Sunlight</span>
+                    <h2 class="sun-duration">--</h2>
+                </div>
+
+                <div class="sun-times">
+                    <div>
+                        <small>Sunrise</small>
+                        <strong class="sunrise">--</strong>
+                    </div>
+
+                    <div>
+                        <small>Sunset</small>
+                        <strong class="sunset">--</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="forecast-card wind-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+
+                <div>
+                    <span>Strongest Wind</span>
+                    <h2 class="wind-value">-- km/h</h2>
+                </div>
+
+                <p class="wind-day">--</p>
+
+            </div>
+
+
+            <div class="forecast-card cloud-card">
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+
+                <div>
+                    <span>Cloud Cover</span>
+                    <h2 class="cloud-value">--%</h2>
+                </div>
+
+                <p class="cloud-day">--</p>
+
+            </div>
+
+        </section>
+
+
+        <section class="weekly-summary">
+
+            <div class="section-title">
+
+                <div>
+                    <span>Overview</span>
+                    <h2>Weekly Summary</h2>
+                </div>
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <div class="summary-item hottest">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-temperature-high"></i>
+                    </div>
+
+                    <div>
+                        <span>Hottest Day</span>
+                        <h3 class="hottest-day">--</h3>
+                        <strong class="hottest-temp">--°</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-item coldest">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-temperature-low"></i>
+                    </div>
+
+                    <div>
+                        <span>Coldest Day</span>
+                        <h3 class="coldest-day">--</h3>
+                        <strong class="coldest-temp">--°</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-item wettest">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+                        <span>Wettest Day</span>
+                        <h3 class="wettest-day">--</h3>
+                        <strong class="wettest-value">--%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="daily-overview">
+
+            <div class="section-title">
+
+                <div>
+                    <span>7 Days</span>
+                    <h2>Daily Overview</h2>
+                </div>
+
+            </div>
+
+            <div class="forecast-days"></div>
+
+        </section>
+
+    </main>
+
+<script src="./assets/js/profile.js"></script>
+    <script type="module" src="./assets/js/forecast.js"></script>
+
+</body>
+
+</html>

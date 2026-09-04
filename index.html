@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bad+Script&family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dosis:wght@200..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Jura:wght@300..700&family=Lexend+Giga:wght@100..900&family=Libertinus+Math&family=Merienda:wght@300..900&family=Nata+Sans:wght@100..900&family=Oswald:wght@200..700&family=Pacifico&family=Playwrite+NO:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>DashBoard</h2>
+
+            ☁
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="./index.html" class="sidebar-item active">
+                <!-- <img src="./assets/images/icon-home.svg" alt=""> -->
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+            </a>
+
+            <a href="forecast.html" class="sidebar-item">
+                <!-- <img src="./assets/images/icon-forecast.svg" alt=""> -->
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>Forecast</span>
+            </a>
+
+            <a href="#" class="sidebar-item">
+                <!-- <img src="./assets/images/icon-heart.svg" alt=""> -->
+                <i class="fa-solid fa-heart"></i>
+                <span>Favorites</span>
+            </a>
+
+            <a href="map.html" class="sidebar-item">
+                <!-- <img src="./assets/images/icon-map.svg" alt=""> -->
+                <i class="fa-solid fa-map"></i>
+                <span>Weather Map</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="sidebar-item" id="settingsBtn">
+                <!-- <img src="./assets/images/icon-settings.svg" alt=""> -->
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </button>
+
+            <a class="sidebar-profile" id="profileBtn" href="auth.html">
+
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user" id="defaultProfileIcon"></i>
+
+                    <img id="profileAvatar" src="" alt="Profile">
+                </div>
+
+                <span id="profileName">Profile</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="weather-app">
+
+        <header class="top-bar">
+
+            <div class="greeting">
+                <p>Good evening</p>
+                <h1>How's the sky looking today?</h1>
+            </div>
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="search" placeholder="Search for a place..." class="search-input">
+
+                <button class="btn">Search</button>
+
+                <div class="suggestions"></div>
+            </div>
+
+        </header>
+
+        <div class="weather-content">
+            <div class="left">
+                <div class="now-weather">
+
+                    <div class="weather-location">
+                        <div class="country"></div>
+                    </div>
+
+                    <div class="weather-main">
+
+                        <div class="weather-temperature">
+                            <h1></h1>
+                            <p>Feels like <span class="hero-feels-like">--</span>°</p>
+                        </div>
+
+                        <div class="weather-status">
+                            <div class="imgNowStatus"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="cards">
+
+                    <!-- Feels Like -->
+                    <div class="metric-card">
+                        <div class="metric-top">
+                            <div>
+                                <p>Feels Like</p>
+                                <h2 class="feels-like-value">--°</h2>
+                            </div>
+
+                            <div class="metric-icon">
+                                <i class="fa-solid fa-temperature-half"></i>
+                            </div>
+                        </div>
+
+                        <div class="metric-bottom">
+                            <div class="circle-progress" id="feelsLikeCircle">
+                                <span>--</span>
+                            </div>
+
+                            <p>Compared to current temperature</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Humidity -->
+                    <div class="metric-card">
+                        <div class="metric-top">
+                            <div>
+                                <p>Humidity</p>
+                                <h2 class="humidity-value">--%</h2>
+                            </div>
+
+                            <div class="metric-icon">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                        </div>
+
+                        <div class="metric-bottom">
+                            <div class="circle-progress" id="humidityCircle">
+                                <span>--%</span>
+                            </div>
+
+                            <p>Relative humidity</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Wind -->
+                    <div class="metric-card">
+                        <div class="metric-top">
+                            <div>
+                                <p>Wind</p>
+                                <h2 class="wind-value">-- km/h</h2>
+                            </div>
+
+                            <div class="metric-icon">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                        </div>
+
+                        <div class="wind-progress">
+                            <div class="wind-progress-bar">
+                                <span id="windBar"></span>
+                            </div>
+
+                            <div class="wind-scale">
+                                <span>0</span>
+                                <span>50 km/h</span>
+                            </div>
+                        </div>
+
+                        <p class="metric-description">Current wind speed</p>
+                    </div>
+
+
+                    <!-- Precipitation -->
+                    <div class="metric-card">
+                        <div class="metric-top">
+                            <div>
+                                <p>Precipitation</p>
+                                <h2 class="precipitation-value">-- mm</h2>
+                            </div>
+
+                            <div class="metric-icon">
+                                <i class="fa-solid fa-cloud-rain"></i>
+                            </div>
+                        </div>
+
+                        <div class="metric-bottom">
+                            <div class="circle-progress" id="precipitationCircle">
+                                <span>--</span>
+                            </div>
+
+                            <p>Current precipitation</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <h3 style="margin-top: 2rem;">Daily ForeCast</h3>
+
+                <div class="dailay-forecast">
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="hourly">
+                    <h3>Hourly Forecast</h3>
+                    <select class="day-select">
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+
+
+
+                    </select>
+                </div>
+
+
+                <div class="AllHours">
+
+
+                </div>
+
+                <div class="map-card">
+
+                    <div class="map-card-header">
+                        <div>
+                            <p>Weather Map</p>
+                            <span class="map-location">Current location</span>
+                            <a href="map.html">
+                                <i class="fa-solid fa-arrow-right"
+                                    style="align-content: center; text-align: center; font-size: 13px; color: white;"></i>
+                            </a>
+                        </div>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+
+                    <div id="weatherMap">
+
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe class="gmap_iframe" width="600" height="450"
+                                    src="https://www.google.com/maps?q=Cairo&amp;z=15&amp;t=m&amp;hl=en&amp;output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                    href="https://www.spaceref.com/">www.spaceref.com</a></div>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    width: 600px;
+                                    height: 450px
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    width: 600px;
+                                    height: 450px
+                                }
+
+                                .gmap_iframe {
+                                    width: 600px !important;
+                                    height: 450px !important
+                                }
+                            </style>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="./assets/js/profile.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+</body>
+
+</html>

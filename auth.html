@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App - Account</title>
+
+    <link rel="stylesheet" href="./assets/css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+              <div class="image-preview">
+                        <img
+                            id="imagePreview"
+                            src=""
+                            alt="Profile Preview"
+                        >
+                    </div>
+
+        <!-- Register -->
+        <div class="auth-box" id="registerBox">
+
+            <h1>Create Account</h1>
+            <p class="subtitle">Create your weather account</p>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <label for="registerName">Name</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Email</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="profileImage">Profile Picture</label>
+
+                    <input
+                        type="file"
+                        id="profileImage"
+                        accept="image/*"
+                    >
+
+              
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    Register
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Already have an account?
+                <button id="showLogin">Login</button>
+            </p>
+
+        </div>
+
+
+        <!-- Login -->
+        <div class="auth-box hidden" id="loginBox">
+
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Login to your account</p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="loginEmail">Email</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Don't have an account?
+                <button id="showRegister">Register</button>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/auth.js"></script>
+
+
+</body>
+
+</html>
